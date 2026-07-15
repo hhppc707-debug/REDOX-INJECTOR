@@ -1,0 +1,6 @@
+{
+  "name": "V2Ray Trojan VPN",
+  "description": "A high-performance V2Ray client supporting the Trojan protocol with secure WebSocket (WS) and TLS encapsulation, featuring real-time telemetry, connection logs, and latency monitoring.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
