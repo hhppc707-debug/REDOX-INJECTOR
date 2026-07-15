@@ -23,5 +23,3 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "V2Ray Trojan VPN"
-
-include(":app")
