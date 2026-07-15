@@ -19,9 +19,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-
-      - name: Setup Gradle
-        uses: actions/gradle-actions/setup-gradle@v3
+          cache: 'gradle'
 
       - name: Generate Gradle Wrapper
         run: gradle wrapper
@@ -37,4 +35,3 @@ jobs:
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/*.apk
-
