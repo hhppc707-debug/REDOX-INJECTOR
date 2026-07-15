@@ -21,6 +21,18 @@ jobs:
           java-version: '17'
           cache: 'gradle'
 
+      # خطوة ذكية لإنشاء مجلد gradle وملف الإصدارات الناقص لحل أخطاء libs البرمجية
+      - name: Fix Missing Version Catalog
+        run: |
+          mkdir -p gradle
+          echo '[versions]' > gradle/libs.versions.toml
+          echo 'compose = "1.6.0"' >> gradle/libs.versions.toml
+          echo '[plugins]' >> gradle/libs.versions.toml
+          echo 'google-devtools-ksp = { id = "com.google.devtools.ksp", version = "1.9.20-1.0.14" }' >> gradle/libs.versions.toml
+          echo 'roborazzi = { id = "io.github.takahirom.roborazzi", version = "1.7.0" }' >> gradle/libs.versions.toml
+          echo 'google-secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version = "2.0.1" }' >> gradle/libs.versions.toml
+          echo 'google-services = { id = "com.google.gms.google-services", version = "4.4.0" }' >> gradle/libs.versions.toml
+
       - name: Generate Gradle Wrapper
         run: gradle wrapper
 
